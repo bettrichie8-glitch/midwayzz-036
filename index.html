@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIDWAYZZ RESTAURANT & GRILL 036 – Bomet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>MIDWAYZZ RESTAURANT & GRILL 036</h1>
+    <p>Opposite Sheba Club, Bomet Town</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome!</h2>
+    <p>All types of delicious meals are available — and comfortable rooms for visitors from within and outside Kenya.</p>
+    <button onclick="openBookingModal()">Book a Room</button>
+  </section>
+
+  <!-- Food Menu Section -->
+  <section class="menu">
+    <h2>🍴 Our Available Meals</h2>
+    <div class="menu-grid">
+      <div class="menu-item">Ugali & Sukuma Wiki</div>
+      <div class="menu-item">Nyama Choma</div>
+      <div class="menu-item">Chapati & Beans</div>
+      <div class="menu-item">Chicken Pilau</div>
+      <div class="menu-item">Burger & Fries 🍔</div>
+      <div class="menu-item">American Pancakes 🥞</div>
+      <div class="menu-item">BBQ Ribs 🍖</div>
+      <div class="menu-item">Hot Dog 🌭</div>
+      <div class="menu-item">Cheeseburger Deluxe 🍔</div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Book a Room</h3>
+      <form id="bookingForm">
+        <label>Full name
+          <input type="text" id="bk_name" required />
+        </label>
+        <label>Phone
+          <input type="tel" id="bk_phone" required />
+        </label>
+        <label>Check-in date
+          <input type="date" id="bk_checkin" required />
+        </label>
+        <label>Nights
+          <input type="number" id="bk_nights" min="1" value="1" required />
+        </label>
+
+        <label>Send to:
+          <select id="bk_target">
+            <option value="boss">Boss (0724821096)</option>
+            <option value="madam">Madam Boss (0726954750)</option>
+          </select>
+        </label>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn">Send to WhatsApp</button>
+          <button type="button" class="btn ghost" onclick="closeBookingModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Buttons -->
+  <div class="wa-container">
+    <div class="whatsapp-float boss" onclick="openBookingModal()">💬 Chat Boss</div>
+    <div class="whatsapp-float madam" onclick="openBookingModal()">💬 Chat Madam Boss</div>
+  </div>
+
+  <!-- Pop-up Welcome Message -->
+  <div id="welcomePopup" class="popup hidden">
+    <p>👋 Hi! I’m new at Bomet — is MIDWAYZZ offering all kinds of food?</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <!-- Google Map -->
+  <section class="map">
+    <h2>📍 Find Us Here</h2>
+    <iframe
+      src="https://www.google.com/maps?q=Bomet%20Sheba%20Club&output=embed"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <footer>
+    <p>📞 Boss: 0724821096 | Madam Boss: 0726954750</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

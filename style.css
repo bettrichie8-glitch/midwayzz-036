@@ -1,0 +1,117 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: url('food-bg.jpg') center/cover fixed no-repeat;
+  color: white;
+  text-align: center;
+}
+header {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+}
+h1 { color: #ffcc00; margin: 0; }
+.intro {
+  margin: 40px auto;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+button {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover { background: #128C7E; }
+
+/* Menu Section */
+.menu {
+  background: rgba(0,0,0,0.6);
+  padding: 30px 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+.menu-item {
+  background: #fff;
+  color: #111;
+  padding: 15px;
+  border-radius: 10px;
+  animation: fadeUp 2s ease-in-out infinite alternate;
+}
+@keyframes fadeUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+/* Modal */
+.modal { position: fixed; inset: 0; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.7); z-index: 9999; }
+.modal.hidden { display: none; }
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  animation: pop 0.4s ease;
+}
+@keyframes pop { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+label { display: block; text-align: left; margin: 8px 0; }
+input, select { width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; }
+
+/* Floating WhatsApp buttons */
+.wa-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+.whatsapp-float {
+  background: #25D366;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-weight: 600;
+  transition: 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float.madam { background: #128C7E; }
+
+/* Popup */
+.popup {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: #fff;
+  color: #111;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  max-width: 300px;
+  animation: fadeIn 1s;
+}
+.popup.hidden { display: none; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.map iframe { width: 90%; height: 300px; border: none; border-radius: 10px; margin: 20px 0; }
+
+footer {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  font-size: 14px;
+}
