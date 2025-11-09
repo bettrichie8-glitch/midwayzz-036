@@ -1,14 +1,19 @@
-const BOSS_NUMBER = "254724821096";
+const BOSS_NUMBER = "254724821099";
 const MADAM_NUMBER = "254726954750";
 
-function openBookingModal() {
-  document.getElementById("bookingModal").classList.remove("hidden");
+function openBookingModal(target) {
+  const modal = document.getElementById("bookingModal");
+  modal.classList.remove("hidden");
+  if(target) {
+    document.getElementById("bk_target").value = target;
+  }
 }
+
 function closeBookingModal() {
   document.getElementById("bookingModal").classList.add("hidden");
 }
 
-// Booking form
+// Booking form submit
 document.getElementById("bookingForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -41,7 +46,18 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
   document.getElementById("bookingForm").reset();
 });
 
-// Popup welcome message
+// Floating WhatsApp buttons direct chat
+document.querySelector(".whatsapp-float.boss").addEventListener("click", () => {
+  const waLink = `https://wa.me/${BOSS_NUMBER}?text=Hi Boss 👋`;
+  window.open(waLink, "_blank");
+});
+
+document.querySelector(".whatsapp-float.madam").addEventListener("click", () => {
+  const waLink = `https://wa.me/${MADAM_NUMBER}?text=Hi Madam Boss 👋`;
+  window.open(waLink, "_blank");
+});
+
+// Welcome popup
 window.onload = function () {
   setTimeout(() => {
     document.getElementById("welcomePopup").classList.remove("hidden");

@@ -48,10 +48,7 @@ button:hover { background: #128C7E; }
   border-radius: 10px;
   animation: fadeUp 2s ease-in-out infinite alternate;
 }
-@keyframes fadeUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
-}
+@keyframes fadeUp { from { transform: translateY(0); } to { transform: translateY(-6px); } }
 
 /* Modal */
 .modal { position: fixed; inset: 0; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.7); z-index: 9999; }
